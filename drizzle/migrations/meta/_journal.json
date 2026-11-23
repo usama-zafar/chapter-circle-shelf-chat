@@ -8,6 +8,13 @@
       "when": 1795439906922,
       "tag": "0000_book_club_core",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795440613930,
+      "tag": "0001_scope_member_visibility",
+      "breakpoints": true
     }
   ]
 }
