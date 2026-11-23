@@ -15,4 +15,6 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Use Node.js preset for Velocity hosting instead of Cloudflare Workers default
+  nitro: { preset: "node-server" },
 });
