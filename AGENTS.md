@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Data access goes straight from the browser client with RLS as the security boundary (profiles, shelf_books, messages); no server functions are needed for these tables.
+- Member-only pages live under `src/routes/_authenticated/` (client-only gate); public pages are top-level.
+- Live message updates use one realtime subscription in `AppShell` that invalidates every `["messages", ...]` query, so pages must keep their message query keys under that prefix.
+- Book catalog search calls Open Library directly from the browser (no key); manual entry is the fallback.
+- Session state comes from the single `onAuthStateChange` listener in `src/lib/auth.tsx`; do not add other auth listeners.
